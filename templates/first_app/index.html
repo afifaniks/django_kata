@@ -4,12 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Django Data</title>
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
 </head>
 <body>
-    <h1>Hello this is index</h1>
-    {{ insert_me }}
-    <img src="{% static "images/image.jpg" %}" alt="Image">
+    <h1>Django Data</h1>
+    <div class="djangotwo">
+        {% if access_records %}
+            <table>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+
+                {% for acc in access_records %}
+                    <tr>
+                        <td>{{acc.name}}</td>
+                        <td>{{acc.date}}</td>                    
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h1>No Data</h1>
+        {% endif %}
+    </div>
 </body>
 </html>
