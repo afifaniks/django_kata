@@ -20,5 +20,6 @@ from basic_form import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('first_app.urls')),
-    path('form/', views.index)
+    path('form/', views.index),
+    path('signup/', include('signup_app.urls')),
 ]
